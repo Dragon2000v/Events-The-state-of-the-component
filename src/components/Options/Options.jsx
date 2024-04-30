@@ -1,18 +1,27 @@
+import s from './Options.module.css';
 import PropTypes from 'prop-types';
 
 const Options = ({ pointsKey, onLeavePoint, onResetPoints, total }) => {
   return (
-    <ul>
+    <ul className={s.options}>
       {pointsKey.map(el => (
-        <li key={el}>
-          <button onClick={() => onLeavePoint(el)} type="button">
+        <li className={s.ptions_item} key={el}>
+          <button
+            className={s.options_btn}
+            onClick={() => onLeavePoint(el)}
+            type="button"
+          >
             {el}
           </button>
         </li>
       ))}
       {total > 0 && (
-        <li>
-          <button onClick={onResetPoints} type="button">
+        <li className={s.ptions_item}>
+          <button
+            className={s.options_reset_btn}
+            onClick={onResetPoints}
+            type="button"
+          >
             RESET
           </button>
         </li>

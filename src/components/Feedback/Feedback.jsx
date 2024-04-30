@@ -1,3 +1,4 @@
+import s from './Feedback.module.css';
 import PropTypes from 'prop-types';
 
 const Feedback = ({ statistics, total, positive }) => {
@@ -12,9 +13,9 @@ const Feedback = ({ statistics, total, positive }) => {
   }
 
   return (
-    <ul>
+    <ul className={s.feedback}>
       {modifiedStatistics.map(([key, value]) => (
-        <li key={key}>
+        <li className={s.feedback_item} key={key}>
           {key}: {value}
         </li>
       ))}
